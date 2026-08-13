@@ -1,0 +1,39 @@
+Q9: Write a program to calculate simple and compound interest for given principal, rate, and time.
+  
+  #include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double principal, rate, time;
+
+    cin >> principal >> rate >> time;
+
+    double simpleInterest = (principal * rate * time) / 100;
+    double compoundInterest = principal * pow(1 + rate / 100, time) - principal;
+
+    cout << "Simple Interest=" << simpleInterest
+         << ", Compound Interest=" << compoundInterest;
+
+    return 0;
+}
+
+
+
+Q10: Write a program to input time in seconds and convert it to hours:minutes:seconds format.
+  
+  #include <iostream>
+using namespace std;
+
+int main() {
+    int totalSeconds;
+    cin >> totalSeconds;
+
+    int hours = totalSeconds / 3600;
+    int minutes = (totalSeconds % 3600) / 60;
+    int seconds = totalSeconds % 60;
+
+    cout << hours << ":" << minutes << ":" << seconds;
+
+    return 0;
+}

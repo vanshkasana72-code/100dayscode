@@ -1,0 +1,77 @@
+Q33: Write a program to check if a number is an Armstrong number.
+
+/*
+Sample Test Cases:
+Input 1:
+153
+Output 1:
+Armstrong
+
+Input 2:
+123
+Output 2:
+Not Armstrong
+
+*/
+#include <stdio.h>
+
+int main() {
+    int num, temp, rem, sum = 0;
+
+    scanf("%d", &num);
+
+    temp = num;
+
+    while (temp != 0) {
+        rem = temp % 10;
+        sum = sum + (rem * rem * rem);
+        temp = temp / 10;
+    }
+
+    if (sum == num)
+        printf("Armstrong");
+    else
+        printf("Not Armstrong");
+
+    return 0;
+}
+Q34: Write a program to check if a number is prime.
+
+/*
+Sample Test Cases:
+Input 1:
+7
+Output 1:
+Prime
+
+Input 2:
+10
+Output 2:
+Not prime
+
+*/
+#include <stdio.h>
+
+int main() {
+    int num, i, prime = 1;
+
+    scanf("%d", &num);
+
+    if (num <= 1) {
+        prime = 0;
+    } else {
+        for (i = 2; i <= num / 2; i++) {
+            if (num % i == 0) {
+                prime = 0;
+                break;
+            }
+        }
+    }
+
+    if (prime)
+        printf("Prime");
+    else
+        printf("Not prime");
+
+    return 0;
+}
